@@ -26,7 +26,7 @@ _________ _______  _______  _______    _______  _______  ______    ______
 */
 package edu.wpi.first.wpilibj.Cerebellum;
 /**
-*@author Shan Virk, Team 5036 - RoboDevils
+*@author Team 5036 - RoboDevils
 */
 
 import edu.wpi.first.wpilibj.IterativeRobot;
