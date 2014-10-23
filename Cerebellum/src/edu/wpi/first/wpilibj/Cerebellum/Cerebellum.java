@@ -148,6 +148,7 @@ public Cerebellum() {
     this.frontLeftSC = new Victor(FRONT_LEFT_SC);
     this.frontRightSC = new Victor(FRONT_RIGHT_SC);
     this.backLeftSC = new Victor(BACK_LEFT_SC);
+    this.backRightSC = new Victor(BACK_RIGHT_SC);
     this.piston1 = new DoubleSolenoid(SOLENOID_1_EXTRACT, SOLENOID_1_RETRACT);
     this.piston2 = new DoubleSolenoid(SOLENOID_2_EXTRACT, SOLENOID_2_RETRACT);
     this.piston3 = new DoubleSolenoid(SOLENOID_3_EXTRACT, SOLENOID_3_RETRACT);
