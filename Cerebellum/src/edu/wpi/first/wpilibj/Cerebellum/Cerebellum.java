@@ -202,7 +202,7 @@ public void autonomousPeriodic() {
 //                      DEVILVISION BLOCKER AUTONOMOUS
         robotDrive.drive(0, 0);
         piston1.set(DoubleSolenoid.Value.kForward);
-        if(devilVision.getLeftStatus()&& !devilVision.getRightStatus()) {
+        if(devilVision.getLeftStatus() && !devilVision.getRightStatus()) {
             robotDrive.drive(1,0);
         }
         else if(!devilVision.getLeftStatus() && devilVision.getRightStatus()) {
@@ -215,13 +215,11 @@ public void autonomousPeriodic() {
             robotDrive.drive(0,0);
         }
 //                      DEVILVISON LOW GOAL AUTONOMOUS
-//                            HOT LOW GOAL AUTON
-/**
-        robotDrive.drive(-1, 0);
-        if(devilVision.getLeftStatus()&& !devilVision.getRightStatus()) {
+/*
+        robotDrive.drive(0, 0);
+        if(devilVision.getLeftStatus() && !devilVision.getRightStatus()) {
             robotDrive.drive(0.3,0);
 	    piston3.set(DoubleSolenoid.Value.kForward);
- 	    
         }
         else if(!devilVision.getLeftStatus() && devilVision.getRightStatus()) {
             robotDrive.drive(0,0);
@@ -231,8 +229,8 @@ public void autonomousPeriodic() {
             robotDrive.drive(-0.5,0);
         }
         else
-            robotDrive.drive(0,0);
-    }
+            robotDrive.drive(-1,0);
+        }
     */
     }//Autonomous While Statement End Bracket
 robotDrive.drive(0,0);
