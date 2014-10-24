@@ -170,7 +170,7 @@ System.out.println("RobotInit Completed");
 /**
  * This function is called periodically every time the robot is disabled
  */
-public void disabledPeriodic() {
+/*public void disabledPeriodic() {
     getWatchdog() .feed();
     while (isDisabled()) {
         getWatchdog() .feed();
@@ -182,7 +182,7 @@ robotDrive.drive(0,0);
 if (isAutonomous()) System.out.println("AutoDisabled");
 if (isOperatorControl()) System.out.println("TeleopDisabled");
 if (isTest()) System.out.println("TestDisabled");
-}//Disabled End Bracket
+}//Disabled End Bracket*/
 
 /**
  * This function is called periodically during autonomous
