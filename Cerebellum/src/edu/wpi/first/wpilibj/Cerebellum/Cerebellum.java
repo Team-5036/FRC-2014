@@ -130,13 +130,6 @@ public class Cerebellum extends IterativeRobot {
     public static DevilVisionServer devilVision;
     /**This is a boolean variable that is used to invert the drive train*/
     boolean inter = false;
-    
-    double kajLeftAxis = (driveStick.getRawAxis(KAJ_LEFT_AXIS));
-    /**Get joystick Y-axis and multiply it with x^3 function. Responsible for forward and backward movement*/
-        double kajLeft = 0.6*((kajLeftAxis)*(kajLeftAxis)*(kajLeftAxis)) + 0.4*(kajLeftAxis);
-    double kajRightAxis = (driveStick.getRawAxis(KAJ_RIGHT_AXIS));
-    /**Get joystick Z-axis and multiply it with x^3 function. Responsible for all turning movement*/
-        double kajRight = 0.6*((kajRightAxis)*(kajRightAxis)*(kajRightAxis)) + 0.4*(kajRightAxis);
 
 public Cerebellum() {
 //                      DEFINE THE VARIABLES
@@ -246,8 +239,14 @@ public void teleopPeriodic() {
         getWatchdog() .feed();
         Timer.delay(0.003);
 //                      ROBOT MOBILITY - ROBOTDRIVE
+	double kajLeftAxis = (driveStick.getRawAxis(KAJ_LEFT_AXIS));
+    		/**Get joystick Y-axis and multiply it with x^3 function. Responsible for forward and backward movement*/
+        	double kajLeft = 0.6*((kajLeftAxis)*(kajLeftAxis)*(kajLeftAxis)) + 0.4*(kajLeftAxis);
+    	double kajRightAxis = (driveStick.getRawAxis(KAJ_RIGHT_AXIS));
+    		/**Get joystick Z-axis and multiply it with x^3 function. Responsible for all turning movement*/
+        	double kajRight = 0.6*((kajRightAxis)*(kajRightAxis)*(kajRightAxis)) + 0.4*(kajRightAxis);
         robotDrive.arcadeDrive(-kajLeft, -kajRight);    
-        if(inter == false){
+        /*if(inter == false){
             if((driveStick.getRawButton(DRIVETRAIN_ORIENTATION_SWITCH1))||(driveStick.getRawButton(DRIVETRAIN_ORIENTATION_SWITCH2))){
                     inter = true;
                     robotDrive.arcadeDrive(kajLeft, kajRight);
@@ -258,7 +257,7 @@ public void teleopPeriodic() {
                     inter =false;
                     robotDrive.arcadeDrive(-kajLeft, -kajRight);
             }
-        }
+        }*/
 //                      ROBOT MOBILITY - VICTORS
 //                      ROBOT PNUEMATICS - COMPRESSOR
         if(driveStick.getRawButton(AIRCOMPRESSOR_STOP)){
