@@ -147,6 +147,7 @@ public Cerebellum() {
     this.piston3 = new DoubleSolenoid(SOLENOID_3_EXTRACT, SOLENOID_3_RETRACT);
     
     Cerebellum.devilVision = DevilVisionServer.getInstance();
+System.out.println("Constructor Completed");
 }//Cerebellum End Bracket
 
 /**
@@ -192,8 +193,8 @@ public void autonomousPeriodic() {
     while(isEnabled() && isAutonomous()) {
         getWatchdog() .feed();
         Timer.delay(0.003);
-//                      DEVILVISION BLOCKER AUTONOMOUS
-        robotDrive.drive(0, 0);
+//                      DEVILVISION BLOCKER AUTONOMOUS - ROBOTDRIVE
+        /*robotDrive.drive(0, 0);
         piston1.set(DoubleSolenoid.Value.kForward);
         if(devilVision.getLeftStatus() && !devilVision.getRightStatus()) {
             robotDrive.drive(1,0);
@@ -206,6 +207,38 @@ public void autonomousPeriodic() {
         }
         else{
             robotDrive.drive(0,0);
+        }*/
+//                      DEVILVISON BLOCKER AUTONOMOUS - VICTORS
+        double leftSpeed;
+        double rightSpeed;
+        
+        piston1.set(DoubleSolenoid.Value.kForward);
+        if(devilVision.getLeftStatus() && !devilVision.getRightStatus()) {
+            leftSpeed = 1;
+            rightSpeed = -1;
+            frontLeftSC.set(leftSpeed);
+            frontRightSC.set(rightSpeed);
+            backLeftSC.set(leftSpeed);
+            backRightSC.set(rightSpeed);
+        }
+        else if(!devilVision.getLeftStatus() && devilVision.getRightStatus()) {
+            leftSpeed = -1;
+            rightSpeed = 1;
+            frontLeftSC.set(leftSpeed);
+            frontRightSC.set(rightSpeed);
+            backLeftSC.set(leftSpeed);
+            backRightSC.set(rightSpeed);
+        }
+        else if(devilVision.getLeftStatus() && devilVision.getRightStatus()) {
+            piston1.set(DoubleSolenoid.Value.kReverse);
+        }
+        else{
+            leftSpeed = 0;
+            rightSpeed = 0;
+            frontLeftSC.set(leftSpeed);
+            frontRightSC.set(rightSpeed);
+            backLeftSC.set(leftSpeed);
+            backRightSC.set(rightSpeed);
         }
 //                      DEVILVISON LOW GOAL AUTONOMOUS
 /*
@@ -259,6 +292,20 @@ public void teleopPeriodic() {
             }
         }*/
 //                      ROBOT MOBILITY - VICTORS
+//        double kajLeftAxis = (driveStick.getRawAxis(KAJ_LEFT_AXIS));
+    		/**Get joystick Y-axis and multiply it with x^3 function. Responsible for forward and backward movement*/
+//        	double kajLeft = 0.6*((kajLeftAxis)*(kajLeftAxis)*(kajLeftAxis)) + 0.4*(kajLeftAxis);
+//    	double kajRightAxis = (driveStick.getRawAxis(KAJ_RIGHT_AXIS));
+    		/**Get joystick Z-axis and multiply it with x^3 function. Responsible for all turning movement*/
+//        	double kajRight = 0.6*((kajRightAxis)*(kajRightAxis)*(kajRightAxis)) + 0.4*(kajRightAxis);
+        /*double leftSpeed;
+        double rightSpeed;
+        leftSpeed = kajLeft - kajRight;
+        rightSpeed = -kajLeft - kajRight;
+        frontLeftSC.set(leftSpeed);
+        frontRightSC.set(rightSpeed);
+        backLeftSC.set(leftSpeed);
+        backRightSC.set(rightSpeed);*/
 //                      ROBOT PNUEMATICS - COMPRESSOR
         if(driveStick.getRawButton(AIRCOMPRESSOR_STOP)){
             airCompressor.stop();
