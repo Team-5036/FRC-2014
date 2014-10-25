@@ -292,13 +292,11 @@ public void teleopPeriodic() {
             }
         }*/
 //                      ROBOT MOBILITY - VICTORS
-//        double kajLeftAxis = (driveStick.getRawAxis(KAJ_LEFT_AXIS));
-    		/**Get joystick Y-axis and multiply it with x^3 function. Responsible for forward and backward movement*/
-//        	double kajLeft = 0.6*((kajLeftAxis)*(kajLeftAxis)*(kajLeftAxis)) + 0.4*(kajLeftAxis);
-//    	double kajRightAxis = (driveStick.getRawAxis(KAJ_RIGHT_AXIS));
-    		/**Get joystick Z-axis and multiply it with x^3 function. Responsible for all turning movement*/
-//        	double kajRight = 0.6*((kajRightAxis)*(kajRightAxis)*(kajRightAxis)) + 0.4*(kajRightAxis);
-        /*double leftSpeed;
+        /*double kajLeftAxis = (driveStick.getRawAxis(KAJ_LEFT_AXIS));
+	       	double kajLeft = 0.6*((kajLeftAxis)*(kajLeftAxis)*(kajLeftAxis)) + 0.4*(kajLeftAxis);
+    	double kajRightAxis = (driveStick.getRawAxis(KAJ_RIGHT_AXIS));
+        	double kajRight = 0.6*((kajRightAxis)*(kajRightAxis)*(kajRightAxis)) + 0.4*(kajRightAxis);
+        double leftSpeed;
         double rightSpeed;
         leftSpeed = kajLeft - kajRight;
         rightSpeed = -kajLeft - kajRight;
