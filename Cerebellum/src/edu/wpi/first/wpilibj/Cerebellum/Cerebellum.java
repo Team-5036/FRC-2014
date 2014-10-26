@@ -231,6 +231,8 @@ public void autonomousPeriodic() {
         }
         else if(devilVision.getLeftStatus() && devilVision.getRightStatus()) {
             piston1.set(DoubleSolenoid.Value.kReverse);
+            //leftSpeed = 0.3;
+            //rightSpeed = -0.3;
         }
         else{
             leftSpeed = 0;
