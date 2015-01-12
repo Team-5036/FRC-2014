@@ -1,4 +1,5 @@
-
+MIDlet-Name: Cerebellum
+MIDlet-Version: 1.0.0
 MIDlet-Vendor: FIRST
 MIDlet-1: Cerebellum, , edu.wpi.first.wpilibj.Cerebellum.Cerebellum
 MicroEdition-Profile: IMP-1.0
