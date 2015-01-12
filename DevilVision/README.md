@@ -1,6 +1,7 @@
 DevilVision
 ============
 Credits to Team 254 - Cheesy Poofs
+
 The following program is a remake of 254's CheesyVision but reivsed to suit the purpose of blocking goals autonomously.
 
 This project can be used to signal your robot during autonomous mode using computer vision and the webcam on your driver station laptop. This is very similar to the Kinect but requires no extra hardware or USB ports.
