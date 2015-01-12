@@ -10,4 +10,5 @@ Our robot was designed to be defensive. It consisted of 1 large pistion that ext
 of Chessy Vision, we were able to manipulate their code for our purposes allowing us to blocks goals in autonomous using 
 operator input from the webcam. We also had a gate system that allowed us to catch and pass the ball effectivly.
 
-Here is the code for those that are interested. It is coded using the iterative template.
+Here is the code for those that are interested. It is coded using the iterative template. Open Cerebellum/src to access the java
+file.
